@@ -1,0 +1,15 @@
+{
+    "LocalSwithcer": {
+        "lang": "Langue",
+        "ar": "Arabe",
+        "en": "Anglaise",
+        "fr": "France"
+    },
+    "NavItems": {
+        "home": "maison",
+        "courses": "cours",
+        "about": "à propos",
+        "policy": "politique",
+        "faq": "faq"
+    }
+}
