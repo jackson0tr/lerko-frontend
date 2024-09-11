@@ -101,7 +101,7 @@ const AdminSidebar:FC<Props> = () => {
                 width: isCollapsed ? "0%" : "16%"
             }}>
                 <Menu iconShape='square'>
-                    <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)} icon={isCollapsed ? <ArrowForwardIosIcon/>: undefined} style={{
+                    <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)} icon={isCollapsed ? <ArrowBackIosIcon/>: undefined} style={{
                         margin: "10px 0  20px 0"
                     }}>
                         {
@@ -113,7 +113,7 @@ const AdminSidebar:FC<Props> = () => {
                                         </h3>
                                     </Link>
                                     <IconButton onClick={()=>setIsCollapsed(!isCollapsed)} className='inline-block'>
-                                        <ArrowBackIosIcon className='text-[#333] dark:text-[#ffffffc1]'/>
+                                        <ArrowForwardIosIcon className='text-[#333] dark:text-[#ffffffc1]'/>
                                     </IconButton>
                                 </Box>
                             )

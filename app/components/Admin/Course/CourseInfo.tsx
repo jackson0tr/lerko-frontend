@@ -152,8 +152,8 @@ const CourseInfo:FC<Props> = ({courseInfo,setCourseInfo,active,setActive}) =>{
                         الفئات
                     </label>
                     <select name="" id="categories" 
-                    onChange={(e:any)=>setCourseInfo({...courseInfo, categories: e.target.value})} 
-                    value={courseInfo.categories} 
+                    value={courseInfo.category} 
+                    onChange={(e:any)=>setCourseInfo({...courseInfo, category: e.target.value})} 
                     className={style.input}>
                         <option>اختار فئة</option>
                         {
