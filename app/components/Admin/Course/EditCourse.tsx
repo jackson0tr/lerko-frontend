@@ -121,7 +121,7 @@ const EditCourse:FC<Props> = ({id}) => {
         setCourseData(data);
     }
     
-    console.log("DATA__: ",data);
+    console.log("DATA__: ",courseData);
 
     const handleCreateCourse = async (e:any) =>{
         const data = courseData;
