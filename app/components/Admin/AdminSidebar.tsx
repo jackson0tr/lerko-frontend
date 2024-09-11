@@ -25,7 +25,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Box, IconButton, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import logo from '../../public/imgs/lerko-removebg.webp'
+import logo from '../../../public/imgs/lerko-removebg.webp'
 
 interface itemProps {
     title: string;
