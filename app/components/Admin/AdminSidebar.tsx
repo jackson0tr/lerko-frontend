@@ -25,7 +25,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Box, IconButton, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import logo from '../../../public/imgs/lerko-removebg.webp'
+import logo from '../../../public/imgs/lerko-removebg.png'
 
 interface itemProps {
     title: string;
@@ -107,7 +107,7 @@ const AdminSidebar: FC<Props> = () => {
                             !isCollapsed && (
                                 <Box display="flex" justifyContent="space-between" alignItems="center" mr="15px">
                                     <Link href={"/"}>
-                                        <Image width={30} height={30} src={logo} alt='logo' />
+                                        <Image width={100} height={100} src={logo} alt='logo' />
                                     </Link>
                                     <IconButton onClick={() => setIsCollapsed(!isCollapsed)} className='inline-block'>
                                         <ArrowForwardIosIcon className='text-[#333] dark:text-[#ffffffc1]' />

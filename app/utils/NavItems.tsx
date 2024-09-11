@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { IoClose } from 'react-icons/io5';
-import logo from '../../public/imgs/lerko-removebg.webp';
+import logo from '../../public/imgs/lerko-removebg.png';
 
 
 type Props = {
@@ -68,7 +68,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
                         <IoClose id='screen' size={50} onClick={handleClose} className='cursor-pointer  pr-[20px] text-[crimson] top-[20px] left-[0]' />
                         <div className="w-full text-center py-6">
                             <Link href='/' passHref>
-                                <Image src={logo} alt='logo' width={30} height={30} />
+                                <Image src={logo} alt='logo' width={100} height={100} />
                             </Link>
                         </div>
                         {

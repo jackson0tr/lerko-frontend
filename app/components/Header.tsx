@@ -16,7 +16,7 @@ import { useLogoutQuery, useSocialAuthMutation } from '@/redux/features/auth/aut
 import { toast } from 'react-hot-toast';
 import { useLoadUserQuery } from '@/redux/features/api/apiSlice';
 import { useTranslation } from 'react-i18next';
-import logo from  '../../public/imgs/lerko-removebg.webp'
+import logo from  '../../public/imgs/lerko-removebg.png'
 
 type Props={
     open:boolean;
@@ -105,7 +105,7 @@ const Header:FC<Props> = ({activeItem,setOpen,route,open,setRoute})=>{
                     <div className="w-full h-[80px] flex items-center justify-between p-3">
                         <div>
                             <Link href={"/"}>
-                                <Image width={30} height={30} src={logo} alt='logo' />
+                                <Image width={100} height={100} src={logo} alt='logo' />
                             </Link>
                         </div>
                         <div className="flex items-center">
