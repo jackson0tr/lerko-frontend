@@ -227,21 +227,21 @@ const CourseContent: FC<Props> = ({ active, setActive, courseContentData, setCou
                                                         cols={30}
                                                         placeholder='ادخل وصف الفديو'
                                                         className={`${style.input} !h-min py-2`}
-                                                        value={item.descriptionDetails}
-                                                        onChange={(e) => {
-                                                            const updatedData = [...courseContentData];
-                                                            const newContent = {
-                                                                ...updatedData[index],  // Create a new object based on the existing one
-                                                                descriptionDetails: e.target.value  // Update the description property
-                                                            };
-                                                            updatedData[index] = newContent;  // Replace the old object with the new one
-                                                            setCourseContentData(updatedData);  // Update the state with the new array
-                                                        }}
-                                                    // onChange={(e)=>{
-                                                    //     const updatedData = [...courseContentData];
-                                                    //     updatedData[index].description = e.target.value;
-                                                    //     setCourseContentData(updatedData);
-                                                    // }} 
+                                                        value={item.description}
+                                                        // onChange={(e) => {
+                                                        //     const updatedData = [...courseContentData];
+                                                        //     const newContent = {
+                                                        //         ...updatedData[index],  // Create a new object based on the existing one
+                                                        //         descriptionDetails: e.target.value  // Update the description property
+                                                        //     };
+                                                        //     updatedData[index] = newContent;  // Replace the old object with the new one
+                                                        //     setCourseContentData(updatedData);  // Update the state with the new array
+                                                        // }}
+                                                    onChange={(e)=>{
+                                                        const updatedData = [...courseContentData];
+                                                        updatedData[index].description = e.target.value;
+                                                        setCourseContentData(updatedData);
+                                                    }} 
                                                     />
                                                     <br />
                                                 </div>
