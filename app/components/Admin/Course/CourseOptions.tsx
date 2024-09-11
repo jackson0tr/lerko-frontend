@@ -32,7 +32,7 @@ const CourseOptions:FC<Props> = ({active,setActive}) => {
                             )
                         }
                     </div>
-                    <h5 className={`pl-3 text-[20px] ${
+                    <h5 className={`pr-3 text-[20px] ${
                         active === index ? 'text-[#46e256]' : 'dark:text-[#fff] text-[#333]'
                     }`}>
                         {option}
