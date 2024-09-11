@@ -152,13 +152,13 @@ const CourseInfo:FC<Props> = ({courseInfo,setCourseInfo,active,setActive}) =>{
                         الفئات
                     </label>
                     <select name="" id="categories" 
-                    value={courseInfo.category} 
-                    onChange={(e:any)=>setCourseInfo({...courseInfo, category: e.target.value})} 
+                    value={courseInfo.categories} 
+                    onChange={(e:any)=>setCourseInfo({...courseInfo, categories: e.target.value})} 
                     className={style.input}>
                         <option>اختار فئة</option>
                         {
                             categories.map((item:any)=>(
-                                <option key={item._id} value={item._id}>
+                                <option key={item._id} value={item.title}>
                                     {item.title}
                                 </option>
                             ))
