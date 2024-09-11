@@ -64,7 +64,7 @@ const CourseInfo:FC<Props> = ({courseInfo,setCourseInfo,active,setActive}) =>{
 
     useEffect(()=>{
         if(data){
-            setCategories(data.layout.categories)
+            setCategories(data.layout.categories);
         }
     },[data])
 
@@ -152,8 +152,8 @@ const CourseInfo:FC<Props> = ({courseInfo,setCourseInfo,active,setActive}) =>{
                         الفئات
                     </label>
                     <select name="" id="categories" 
-                    onChange={(e:any)=>setCourseInfo({...courseInfo, category: e.target.value})} 
-                    value={courseInfo.category} 
+                    onChange={(e:any)=>setCourseInfo({...courseInfo, categories: e.target.value})} 
+                    value={courseInfo.categories} 
                     className={style.input}>
                         <option>اختار فئة</option>
                         {
@@ -166,21 +166,6 @@ const CourseInfo:FC<Props> = ({courseInfo,setCourseInfo,active,setActive}) =>{
                     </select>
                     </div>
                 </div>
-                {/* <br /> */}
-                {/* <div>
-                    <label htmlFor="email">
-                        Tags
-                    </label>
-                    <input 
-                    type="text" 
-                    name='' 
-                    required 
-                    value={courseInfo.tags} 
-                    id='tags' 
-                    placeholder='Enter course Tags' 
-                    className={`${style.input}`} 
-                    onChange={(e:any)=>setCourseInfo({...courseInfo, tags: e.target.value})} />
-                </div> */}
                 <br />
                 <div className='w-full flex justify-between'>
                     <div className="w-[45%]">

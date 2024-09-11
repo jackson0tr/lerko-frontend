@@ -75,7 +75,7 @@ const CourseContent: FC<Props> = ({ active, setActive, courseContentData, setCou
             courseContentData[courseContentData?.length - 1].description === '' ||
             courseContentData[courseContentData?.length - 1].videoUrl === '' ||
             courseContentData[courseContentData?.length - 1].links[0].title === '' ||
-            courseContentData[courseContentData?.length - 1].links[0].title === ''
+            courseContentData[courseContentData?.length - 1].links[0].url === ''
         ) {
             toast.error('يرجي ملئ الحقول اولا');
         } else {
@@ -103,7 +103,7 @@ const CourseContent: FC<Props> = ({ active, setActive, courseContentData, setCou
             courseContentData[courseContentData?.length - 1].description === '' ||
             courseContentData[courseContentData?.length - 1].videoUrl === '' ||
             courseContentData[courseContentData?.length - 1].links[0].title === '' ||
-            courseContentData[courseContentData?.length - 1].links[0].title === ''
+            courseContentData[courseContentData?.length - 1].links[0].url === ''
         ) {
             toast.error('يرجي املاء الحقل الفارغ')
         } else {
