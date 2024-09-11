@@ -5,7 +5,17 @@ import { BiMoon, BiSun } from 'react-icons/bi'
 
 export const ThemeSwitcher= () =>{
     const [mounted,setMounted] = useState(false);
-    const {theme,setTheme} = useTheme();
+    const {theme,setTheme,systemTheme} = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+        // Set the default theme to dark when mounted
+        if (theme === 'system') {
+            setTheme(systemTheme === 'dark' ? 'dark' : 'light');
+        } else if (!theme) {
+            setTheme('dark');
+        }
+    }, [theme, setTheme, systemTheme]);
 
     useEffect(()=>setMounted(true),[]);
 

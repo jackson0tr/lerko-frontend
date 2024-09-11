@@ -6,8 +6,6 @@ import React, { FC, useState } from 'react'
 import { BiSearch } from 'react-icons/bi';
 import Loader from '../Loader/Loader';
 import { useRouter } from 'next/navigation';
-import HomeImg from '../../../public/imgs/home.jpg';
-import { useTranslations } from 'next-intl';
 import { useCourseSearchQuery } from '@/redux/features/courses/coursesApi';
 
 type Props = {
@@ -18,7 +16,6 @@ const Home: FC<Props> = (props) => {
     const { data, refetch, isLoading } = useGetHomeDataQuery("Banner", {});
     const [search,setSearch] = useState('');
     const router = useRouter();
-    const t = useTranslations();
     const locale = 'ar';
 
     const handleSearch = () => {
@@ -51,7 +48,7 @@ const Home: FC<Props> = (props) => {
                                 <br />
                                 <div className=" w-[90%] h-[50px] bg-transparent relative">
                                     <input type="search" value={search} onChange={(e)=>setSearch(e.target.value)} placeholder='البحث في الدورات'
-                                        className='bg-transparent border dark:border-none dark:bg-[#575757] dark:placeholder:text-[crimson] placeholder:text-[#46e256] placeholder:pr-[50px] rounded-[5px] !pr-[50px] p-2 w-full h-full outline-none text-[#0000004e] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin' />
+                                        className='bg-transparent border dark:border-none dark:bg-[#575757] dark:placeholder:text-[#46e256] placeholder:text-[crimson] placeholder:pr-[50px] rounded-[5px] !pr-[50px] p-2 w-full h-full outline-none text-[#0000004e] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin' />
                                     <div onClick={handleSearch} className="absolute flex items-center justify-center w-[50px] cursor-pointer h-[50px] right-0 top-0 bg-[#39c1f3] rounded-r-[5px]">
                                         <BiSearch className='text-white' size={30} />
                                     </div>
@@ -59,20 +56,20 @@ const Home: FC<Props> = (props) => {
                                 <br />
                                 <br />
                                 <div className=" w-[90%] flex items-center">
-                                    <Image src={require("../../../public/imgs/client-1.png")} alt='client-img' className='rounded-full w-[50px] h-[50px]' />
-                                    <Image src={require("../../../public/imgs/client-2.png")} alt='client-img' className='rounded-full w-[50px] h-[50px] mr-[-20px]' />
-                                    <Image src={require("../../../public/imgs/client-3.png")} alt='client-img' className='rounded-full w-[50px] h-[50px] mr-[-20px]' />
+                                    <Image src={require("../../../public/imgs/client-1.webp")} alt='client-img' className='rounded-full w-[50px] h-[50px]' />
+                                    <Image src={require("../../../public/imgs/client-2.webp")} alt='client-img' className='rounded-full w-[50px] h-[50px] mr-[-20px]' />
+                                    <Image src={require("../../../public/imgs/client-3.webp")} alt='client-img' className='rounded-full w-[50px] h-[50px] mr-[-20px]' />
                                     <p className='font-Josefin dark:text-[#edfff4] text-[#000000b3] 1000px:px-3 text-[18px] font-[600]'>
-                                        {t("140k+ شخص واثقون بنا")} {" "}
+                                        140k+ شخص واثقون بنا {" "}
                                         <Link href={`/${locale}/courses`} passHref className='dark:text-[#46e256] text-[crimson]'>
-                                            {t("مشاهدة الكورسات")}
+                                            مشاهدة الكورسات
                                         </Link>{" "}
                                     </p>
                                 </div>
                                 <br />
                             </div>
                         </div>
-                        <div className='ml-4 items-center p-2'>
+                        <div className='mr-4 items-center p-2'>
                             <Image
                                 src={data?.layout?.banner?.image?.url}
                                 // src={HomeImg}

@@ -4,7 +4,7 @@ import Ratings from '@/app/utils/Ratings';
 import Link from 'next/link';
 import React, { FC, useEffect, useState } from 'react';
 import { IoCheckmarkDoneOutline, IoCloseOutline } from 'react-icons/io5';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { format } from 'timeago.js';
 import CourseContentList from './CourseContentList';
 import { Elements } from '@stripe/react-stripe-js';
@@ -76,7 +76,7 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                         <div className="w-[15px] mr1">
                                             <IoCheckmarkDoneOutline size={20} className='text-[#333] dark:text-[#fff] ' />
                                         </div>
-                                        <p className='pl-2 text-[#333] dark:text-[#fff]'>
+                                        <p className='pr-2 text-[#333] dark:text-[#fff]'>
                                             {item.title}
                                         </p>
                                     </div>
@@ -95,7 +95,7 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                         <div className="w-[15px] mr-1">
                                             <IoCheckmarkDoneOutline size={20} className='text-[#333] dark:text-[#fff] ' />
                                         </div>
-                                        <p className='pl-2 text-[#333] dark:text-[#fff]'>
+                                        <p className='pr-2 text-[#333] dark:text-[#fff]'>
                                             {item.title}
                                         </p>
                                     </div>
@@ -143,7 +143,7 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                                 <div className="w-[50px] h-[50px]">
                                                     <Image className="w-[50px] h-[50px] object-cover rounded-full" width={50} height={50} src={item.user.avatar ? item.user.avatar.url : defaultAvatar} alt="userAvatar" />
                                                 </div>
-                                                <div className="hidden 800px:block pl-2">
+                                                <div className="hidden 800px:block pr-2">
                                                     <div className="flex items-center">
                                                         <h5 className="text-[18px] pr-2 text-[#333] dark:text-[#fff]">
                                                             {item.user.name}
@@ -159,7 +159,7 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                                         }
                                                     </small>
                                                 </div>
-                                                <div className="pl-2 flex 800px:hidden itemx-center">
+                                                <div className="pr-2 flex 800px:hidden itemx-center">
                                                     <h5 className='text-[18px] pr-2 text-[#333] dark:text-[#fff]'>
                                                         {item.user.name}
                                                     </h5>
@@ -168,14 +168,14 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                             </div>
                                             {
                                                 item.commentReplies?.map((i: any, index: number) => (
-                                                    <div className="flex w-full 800px:ml-16 my-5" key={index}>
+                                                    <div className="flex w-full 800px:mr-16 my-5" key={index}>
                                                         <div className="w-[50px] h-[50px]">
                                                             <Image className="w-[50px] h-[50px] object-cover rounded-full" width={50} height={50} src={i.user.avatar ? i.user.avatar.url : defaultAvatar} alt="userAvatar" />
                                                         </div>
-                                                        <div className="pl-2">
+                                                        <div className="pr-2">
                                                             <h5 className="text-[20px] text-[#333] dark:text-[#fff]">
                                                                 {i.user.name}
-                                                            </h5>{" "}{i.user.role === 'admin' && <VscVerifiedFilled className="text-[#00ceff] ml-2 text-[20px]" />}
+                                                            </h5>{" "}{i.user.role === 'admin' && <VscVerifiedFilled className="text-[#00ceff] mr-2 text-[20px]" />}
                                                             <p className="text-[#333] dark:text-[#fff]">
                                                                 {i.comment}
                                                             </p>
@@ -199,10 +199,10 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                 <h1 className="pt-5 text-[25px] text-[#333] dark:text-[#fff] ">
                                     {data?.price === 0 ? 'مجانا' : data?.price + '$'}
                                 </h1>
-                                <h5 className='pl-3 text-[20px] mt-2 line-through opacity-80 text-[#333] dark:text-[#fff] '>
+                                <h5 className='pr-3 text-[20px] mt-2 line-through opacity-80 text-[#333] dark:text-[#fff] '>
                                     {data?.estimatedPrice}$
                                 </h5>
-                                <h4 className='pl-5 pt-4 text-[22px] text-[#333] dark:text-[#fff] '>
+                                <h4 className='pr-5 pt-4 text-[22px] text-[#333] dark:text-[#fff] '>
                                     {discoutPercentegePrice}% خصم
                                 </h4>
                             </div>

@@ -1,9 +1,8 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { IoClose } from 'react-icons/io5';
-import { useTranslation } from 'react-i18next';
-import { useTranslations } from 'use-intl';
-
+import logo from '../../public/imgs/lerko-removebg.webp';
 
 
 type Props = {
@@ -25,28 +24,27 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
         }
     }
 
-    const t = useTranslations();
     const locale = 'ar';
 
     const navItemsData = [
         {
-            name: `${t('الرئيسية')}`,
+            name: 'الرئيسية',
             url: "/"
         },
         {
-            name: `${t('كورسات')}`,
+            name: 'كورسات',
             url: `/${locale}/courses`
         },
         {
-            name: `${t('عننا')}`,
+            name: 'عننا',
             url: `/${locale}/about`
         },
         {
-            name: `${t('سياسة')}`,
+            name: 'سياسة',
             url: `/${locale}/policy`
         },
         {
-            name: `${t('تعليمات')}`,
+            name: 'تعليمات',
             url: `/${locale}/faq`
         },
     ];
@@ -67,10 +65,10 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
             {
                 isMobile && (
                     <div className="800px:hidden mt-5" >
-                        <IoClose id='screen' size={50} onClick={handleClose} className='cursor-pointer  pl-[20px] text-[crimson] top-[20px] right-[-90px]' />
+                        <IoClose id='screen' size={50} onClick={handleClose} className='cursor-pointer  pr-[20px] text-[crimson] top-[20px] left-[0]' />
                         <div className="w-full text-center py-6">
                             <Link href='/' passHref>
-                                <span className={`text-[25px] font-Poppins font-[500] text-black dark:text-white `}>{t('ليركو')}</span>
+                                <Image src={logo} alt='logo' width={30} height={30} />
                             </Link>
                         </div>
                         {

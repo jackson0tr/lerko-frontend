@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +6,6 @@ type Props={
 }
 
 const Footer = () => {
-    const t = useTranslations();
     const locale = 'ar';
     return(
         <footer>
@@ -17,90 +15,90 @@ const Footer = () => {
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
                     <div className="space-y-3">
                         <h3 className="text-[20px] font-[600] text-[#333] dark:text-[#fff]">
-                            {t("عننا")}
+                            عننا
                         </h3>
                         <ul className='space-y-4'>
                             <li>
                                 <Link href={`/${locale}/about`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("قصتنا")}
+                                    قصتنا
                                 </Link>
                             </li>
                             <li>
                                 <Link href={`/${locale}/policy`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("سياسة الخصوصية")}
+                                    سياسة الخصوصية
                                 </Link>
                             </li>
                             <li>
                                 <Link href={`/${locale}/faq`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                   {t("التعليمات")}
+                                   التعليمات
                                 </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
                         <h3 className="text-[20px] font-[600] text-[#333] dark:text-[#fff]">
-                            {t("روابط سريعة")}
+                            روابط سريعة
                         </h3>
                         <ul className='space-y-4'>
                             <li>
                                 <Link href={`/${locale}/courses`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("الدورات")}
+                                    الدورات
                                 </Link>
                             </li>
                             <li>
                                 <Link href={`/${locale}/profile`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                   {t("حسابي")}
+                                   حسابي
                                 </Link>
                             </li>
                             <li>
                                 <Link href={`/`} className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                   {t("الرئيسية")}
+                                   الرئيسية
                                 </Link>
                             </li>
                         </ul>
                     </div>
                     <div className="space-y-3">
                         <h3 className="text-[20px] font-[600] text-[#333] dark:text-[#fff]">
-                           {t("روابط اجتماعية")}
+                           روابط اجتماعية
                         </h3>
                         <ul className='space-y-4'>
                             <li>
                                 <Link href='https://www.facebook.com' className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("فيسبوك")}
+                                    فيسبوك
                                 </Link>
                             </li>
                             <li>
                                 <Link href='https://www.instagram.com' className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("انستغرام")}
+                                    انستغرام
                                 </Link>
                             </li>
                             <li>
                                 <Link href='https://www.linkedin.com' className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] '>
-                                    {t("لينكد ان")}
+                                    لينكد ان
                                 </Link>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-[20px] font-[600] text-[#333] dark:text-[#fff] pb-3">
-                           {t("معلومات الاتصال")}
+                           معلومات الاتصال
                         </h3>
                         <p className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] pb-2'>
-                        {t("اتصل بنا:")} 1-234-567-890 
+                        اتصل بنا: 1-234-567-890 
                         </p>
                         <p className='text-base text-[#333] dark:text-[#fff] dark:hover:text-[crimson] pb-2'>
-                        {t("ارسل لنا:")}{' '}
+                        ارسل لنا:{' '}
                         <Link className="border-b border-[crimson] dark:border-[#23bd70] border-solid dark:text-[#23bd70] text-[crimson]" href={`mailto:dev.mahmoudmohamed@gmail.com`}>
-                            dev.mahmoudmohamed@gmail.com 
+                            lerko@gmail.com 
                         </Link>
                         </p>
                     </div>
                 </div>
                 <br />
                 <p className='text-center text-[#333] dark:text-[#fff]'>
-                    {t("حقوق النشر")} &copy; {t("ليركو | كل الحقوق محفوظة")}
+                    حقوق النشر &copy; ليركو | كل الحقوق محفوظة
                     <br />
-                    {t("مشغل بواسطة/")} <Link className="border-b border-[crimson] dark:border-[#23bd70] border-solid dark:text-[#23bd70] text-[crimson]" href='https://dev-mahmoud.vercel.app'>{t("محمود محمد")}</Link>
+                    مشغل بواسطة/ <Link className="border-b border-[crimson] dark:border-[#23bd70] border-solid dark:text-[#23bd70] text-[crimson]" href='https://dev-mahmoud.vercel.app'>محمود محمد</Link>
                 </p>
             </div>
             <br />    

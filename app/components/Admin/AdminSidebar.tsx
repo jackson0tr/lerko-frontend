@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import {ProSidebar, Menu, MenuItem} from 'react-pro-sidebar';
+import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import {
     HomeOutlinedIcon,
@@ -25,19 +25,19 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { Box, IconButton, Typography } from '@mui/material';
 import { useTranslations } from 'next-intl';
+import logo from '../../public/imgs/lerko-removebg.webp'
 
-
-interface itemProps{
-    title:string;
-    to:string;
-    icon:JSX.Element;
-    selected:string;
-    setSelected:any;
+interface itemProps {
+    title: string;
+    to: string;
+    icon: JSX.Element;
+    selected: string;
+    setSelected: any;
 }
 
-const Item:FC<itemProps> = ({title,to,icon,selected,setSelected}) =>{
-    return(
-        <MenuItem active={selected === title} onClick={()=>setSelected(title)} icon={icon}>
+const Item: FC<itemProps> = ({ title, to, icon, selected, setSelected }) => {
+    return (
+        <MenuItem active={selected === title} onClick={() => setSelected(title)} icon={icon}>
             <Typography className='!text-[16px] !font-Poppins'>
                 {title}
             </Typography>
@@ -46,36 +46,35 @@ const Item:FC<itemProps> = ({title,to,icon,selected,setSelected}) =>{
     )
 }
 
-type Props={
+type Props = {
 
 }
 
-const AdminSidebar:FC<Props> = () => {
-    const {user} = useSelector((state:any)=>state.auth);
-    const [isCollapsed,setIsCollapsed] = useState(false);
-    const [logout,setLogout] = useState(false);
-    const [selected,setSelected] = useState("Dashboard");
-    const [mounted,setMounted] = useState(false);
-    const {theme,setTheme} = useTheme();
+const AdminSidebar: FC<Props> = () => {
+    const { user } = useSelector((state: any) => state.auth);
+    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [logout, setLogout] = useState(false);
+    const [selected, setSelected] = useState("Dashboard");
+    const [mounted, setMounted] = useState(false);
+    const { theme, setTheme } = useTheme();
     const t = useTranslations();
     const locale = 'ar';
 
-    useEffect(()=>setMounted(true),[]);
+    useEffect(() => setMounted(true), []);
 
-    if(!mounted){
+    if (!mounted) {
         return null;
     }
 
-    const logoutHandler = () =>{
+    const logoutHandler = () => {
         setLogout(true);
     }
 
-    return(
+    return (
         <Box className='!bg-white dark:bg-[#111C43]' sx={{
             "& .pro-sidebar-inner": {
-                background: `${
-                    theme === "dark" ? "#111C43 !important" : "#fff !important" 
-                }`,
+                background: `${theme === "dark" ? "#111C43 !important" : "#fff !important"
+                    }`,
             },
             "& .pro-icon-wrapper": {
                 backgroundColor: "transparent !important"
@@ -101,19 +100,17 @@ const AdminSidebar:FC<Props> = () => {
                 width: isCollapsed ? "0%" : "16%"
             }}>
                 <Menu iconShape='square'>
-                    <MenuItem onClick={()=>setIsCollapsed(!isCollapsed)} icon={isCollapsed ? <ArrowBackIosIcon/>: undefined} style={{
+                    <MenuItem onClick={() => setIsCollapsed(!isCollapsed)} icon={isCollapsed ? <ArrowBackIosIcon /> : undefined} style={{
                         margin: "10px 0  20px 0"
                     }}>
                         {
                             !isCollapsed && (
                                 <Box display="flex" justifyContent="space-between" alignItems="center" mr="15px">
-                                    <Link href="/">
-                                        <h3 className='text-[25px] font-Poppins uppercase dark:text-[#fff] text-[#333]' >
-                                            ليركو
-                                        </h3>
+                                    <Link href={"/"}>
+                                        <Image width={30} height={30} src={logo} alt='logo' />
                                     </Link>
-                                    <IconButton onClick={()=>setIsCollapsed(!isCollapsed)} className='inline-block'>
-                                        <ArrowForwardIosIcon className='text-[#333] dark:text-[#ffffffc1]'/>
+                                    <IconButton onClick={() => setIsCollapsed(!isCollapsed)} className='inline-block'>
+                                        <ArrowForwardIosIcon className='text-[#333] dark:text-[#ffffffc1]' />
                                     </IconButton>
                                 </Box>
                             )
@@ -132,10 +129,10 @@ const AdminSidebar:FC<Props> = () => {
                                     {/* </Link> */}
                                 </Box>
                                 <Box textAlign="center">
-                                    <Typography variant='h4' sx={{m:"10px 0 0 0"}} className='!text-[20px] text-[#333] dark:text-[#ffffffc1]' >
+                                    <Typography variant='h4' sx={{ m: "10px 0 0 0" }} className='!text-[20px] text-[#333] dark:text-[#ffffffc1]' >
                                         {user?.name}
                                     </Typography>
-                                    <Typography variant='h6' sx={{m:"10px 0 0 0"}} className='!text-[20px] text-[#333] dark:text-[#ffffffc1] capitalize '>
+                                    <Typography variant='h6' sx={{ m: "10px 0 0 0" }} className='!text-[20px] text-[#333] dark:text-[#ffffffc1] capitalize '>
                                         - {user?.role}
                                     </Typography>
                                 </Box>
@@ -144,56 +141,56 @@ const AdminSidebar:FC<Props> = () => {
                     }
 
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-                        <Item title={t("لوحة القيادة")} to={`/${locale}/admin`} icon={<HomeOutlinedIcon/>} selected={selected} setSelected={setSelected}/>
+                        <Item title="لوحة القيادة" to={`/${locale}/admin`} icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h5' sx={{m:'15px 0 5px 25px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("بيانات")}`}
+                        <Typography variant='h5' sx={{ m: '15px 0 5px 25px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && "بيانات"}
                         </Typography>
 
-                        <Item title={t("المستخدمين")} to={`/${locale}/admin/users`} icon={<GroupsIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="المستخدمين" to={`/${locale}/admin/users`} icon={<GroupsIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("الفواتير")} to={`/${locale}/admin/invoices`} icon={<ReceiptOutlinedIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="الفواتير" to={`/${locale}/admin/invoices`} icon={<ReceiptOutlinedIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h5' sx={{m:'15px 0 5px 20px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("محتوى")}`}
+                        <Typography variant='h5' sx={{ m: '15px 0 5px 20px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && "محتوى"}
                         </Typography>
 
-                        <Item title={t("إنشاء دورة")} to={`/${locale}/admin/create-course`} icon={<VideoCallIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="إنشاء دورة" to={`/${locale}/admin/create-course`} icon={<VideoCallIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("الدورات الحية")} to={`/${locale}/admin/courses`} icon={<OndemandVideoIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="الدورات الحية" to={`/${locale}/admin/courses`} icon={<OndemandVideoIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h5' sx={{m:'15px 0 5px 20px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("التخصيص")}`}
+                        <Typography variant='h5' sx={{ m: '15px 0 5px 20px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && "التخصيص"}
                         </Typography>
 
-                        <Item title={t("الرئيسية")} to={`/${locale}/admin/home`} icon={<WebIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="الرئيسية" to={`/${locale}/admin/home`} icon={<WebIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("التعليمات")} to={`/${locale}/admin/faq`} icon={<QuizIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="التعليمات" to={`/${locale}/admin/faq`} icon={<QuizIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("فئات")} to={`/${locale}/admin/categories`} icon={<WysiwygIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="فئات" to={`/${locale}/admin/categories`} icon={<WysiwygIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h5' sx={{m:'15px 0 5px 20px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("وحدات التحكم")}`}
+                        <Typography variant='h5' sx={{ m: '15px 0 5px 20px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && "وحدات التحكم"}
                         </Typography>
 
-                        <Item title={t("إدارة الفريق")} to={`/${locale}/admin/team`} icon={<PeopleOutlinedIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="إدارة الفريق" to={`/${locale}/admin/team`} icon={<PeopleOutlinedIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h6' sx={{m:'15px 0 5px 20px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("التحليلات")}`}
+                        <Typography variant='h6' sx={{ m: '15px 0 5px 20px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && "التحليلات"}
                         </Typography>
 
-                        <Item title={t("تحليلات الدورات")} to={`/${locale}/admin/courses-analytics`} icon={<BarChartOutlinedIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="تحليلات الدورات" to={`/${locale}/admin/courses-analytics`} icon={<BarChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("تحليلات الطلبات")} to={`/${locale}/admin/order-analytics`} icon={<MapOutlinedIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="تحليلات الطلبات" to={`/${locale}/admin/order-analytics`} icon={<MapOutlinedIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Item title={t("تحليلات المستخدم")} to={`/${locale}/admin/user-analytics`} icon={<ManageHistoryIcon/>} selected={selected} setSelected={setSelected} />
+                        <Item title="تحليلات المستخدم" to={`/${locale}/admin/user-analytics`} icon={<ManageHistoryIcon />} selected={selected} setSelected={setSelected} />
 
-                        <Typography variant='h6' sx={{m:'15px 0 5px 20px'}} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
-                            {isCollapsed && `${t("آخر")}`}
+                        <Typography variant='h6' sx={{ m: '15px 0 5px 20px' }} className='!text-[18px] text-[#333] dark:text-[#ffffffc1] capitalize !font-[400] ' >
+                            {isCollapsed && `$"آخر"`}
                         </Typography>
 
                         <div onClick={logoutHandler}>
-                            <Item title={t("تسجيل خروج")} to='/' icon={<ExitToAppIcon/>} selected={selected} setSelected={setSelected} />
+                            <Item title="تسجيل خروج" to='/' icon={<ExitToAppIcon />} selected={selected} setSelected={setSelected} />
                         </div>
 
                     </Box>

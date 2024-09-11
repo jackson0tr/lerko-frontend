@@ -9,16 +9,14 @@ import CustomModel from '../utils/CustomModel';
 import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
 import Verifiy from './Auth/Verifiy';
-// import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import avatar from '../../public/imgs/user.png';
-import { SessionProvider, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useLogoutQuery, useSocialAuthMutation } from '@/redux/features/auth/authApi';
 import { toast } from 'react-hot-toast';
 import { useLoadUserQuery } from '@/redux/features/api/apiSlice';
-import LocalSwithcer from './LocalSwithcer';
-import { useTranslations } from 'next-intl';
 import { useTranslation } from 'react-i18next';
+import logo from  '../../public/imgs/lerko-removebg.webp'
 
 type Props={
     open:boolean;
@@ -55,7 +53,7 @@ const Header:FC<Props> = ({activeItem,setOpen,route,open,setRoute})=>{
             }
             if(data === null){
                 if(isSuccess){
-                    toast.success("Login Successfully");
+                    toast.success("تسجيل دخول ناجح");
                 }
             }
             // if(data === null && !isLoading && !userData){
@@ -106,16 +104,14 @@ const Header:FC<Props> = ({activeItem,setOpen,route,open,setRoute})=>{
                 <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
                     <div className="w-full h-[80px] flex items-center justify-between p-3">
                         <div>
-                            <Link href={"/"}
-                            className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}>
-                                {t('ليركو')}
+                            <Link href={"/"}>
+                                <Image width={30} height={30} src={logo} alt='logo' />
                             </Link>
                         </div>
                         <div className="flex items-center">
                             <NavItems
                             activeItem={activeItem} 
                             isMobile={false}/>
-                            {/* <LocalSwithcer/> */}
                             <ThemeSwitcher/>
                             <div className="800px:hidden">
                                 <HiOutlineMenuAlt3 
