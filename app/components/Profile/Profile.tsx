@@ -56,21 +56,21 @@ const Profile:FC<Props> = ({user}) => {
             </div>
                 {
                     active === 1 &&(
-                        <div className="w-full h-full bg-transparent mt-[80px]">
+                        <div className="w-full pr-4 h-full bg-transparent mt-[80px]">
                             <ProfileInfo avatar={avatar} user={user} />
                         </div>
                     )
                 }
                 {
                     active === 2 &&(
-                        <div className="w-full h-full bg-transparent mt-[80px]">
+                        <div className="w-full pr-2 h-full bg-transparent mt-[80px]">
                             <ChangePassword/>
                         </div>
                     )
                 }
                 {
                     active === 3 &&(
-                        <div className="w-full  mt-[80px] pl-7 px-2 800px:px-10 800px:pl-8">
+                        <div className="w-full  mt-[80px] pr-7 px-2 800px:px-10 800px:pr-8">
                             <div className="grid grid-cols-1 gap-[20px] md:grid-cols-2 md:gap-[25px] lg:grid-cols-2 lg:gap-[25px] xl:grid-cols-3 xl:gap-[35px] ">
                                 {
                                     courses && courses.map((item:any,index:number)=>(

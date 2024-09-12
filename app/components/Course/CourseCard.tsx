@@ -15,7 +15,7 @@ const CourseCard:FC<Props> = ({item,isProfile}) => {
     const locale = 'ar';
     return(
         <Link href={!isProfile ? `/${locale}/course/${item._id}` : `${locale}/course-access/${item._id}`} >
-            <div className="w-full min-h-[35vh] dark:bg-slate-500 dark:opacity-20 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg p-3 shadow-sm dark:shadow-inner">
+            <div className="w-full min-h-[35vh] dark:bg-slate-500 dark:opacity-10 backdrop-blur border dark:border-[#ffffff1d] border-[#00000015] dark:shadow-[bg-slate-700] rounded-lg p-3 shadow-sm dark:shadow-inner">
                 <Image width={500} height={300} objectFit="content" className="rounded w-full" src={item.thumbnail?.url} alt='thumbnail' />
                 <br />
                 <h1 className='font-Poppins text-[16px] text-[#333] dark:text-[#fff]'>

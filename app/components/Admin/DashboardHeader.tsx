@@ -4,8 +4,6 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import socketIO from "socket.io-client";
 import { useGetAllNotificationsQuery, useUpdateNotificationsMutation } from '@/redux/features/notifications/notificationsApi';
 import { format } from 'timeago.js';
-import LocalSwithcer from '../LocalSwithcer';
-import { useTranslations } from 'next-intl';
 const ENDPOINT = process.env.PUBLIC_SOCKET_SERVER || "";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -24,7 +22,6 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
     const playerNotificationSound = () => {
         audio.play();
     }
-    const t = useTranslations()
 
     useEffect(() => {
         if (data) {
@@ -60,9 +57,9 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
             </div>
             {
                 open && (
-                    <div className="w-[350px] h-[50vh] dark:bg-[#111C43] bg-[#f5f5f5] shadow-xl absolute z-[9999] top-16 rounded ">
+                    <div className="w-[350px] h-[50vh] dark:bg-[#111C43] bg-[#f5f5f5] shadow-xl absolute z-[99999] top-16 rounded ">
                         <h5 className="text-center text-[20px] font-Poppins text-[#333] dark:text-[#fff] p-3 ">
-                            {t("إشعارات")}
+                            إشعارات
                         </h5>
                         {
                             notifications && notifications.map((item: any, index: number) => (
@@ -74,7 +71,7 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
                                         <p 
                                         onClick={()=>handleNotificationChanged(item._id)}
                                         className="cursor-pointer text-[#333] dark:text-[#fff]">
-                                            {t("ضع إشارة مقروء")}
+                                            ضع إشارة مقروء
                                         </p>
                                     </div>
                                     <p className="px-2 text-[#333] dark:text-[#fff]">

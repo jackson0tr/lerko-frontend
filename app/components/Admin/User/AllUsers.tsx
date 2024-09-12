@@ -212,7 +212,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                                         هل أنت متأكد أنك تريد حذف هذا المستخدم؟
                                         </DialogContentText>
                                     </DialogContent>
-                                    <DialogActions>
+                                    <DialogActions style={{justifyContent: 'space-between'}}>
                                         <Button onClick={handleDeleteUser} color='success' variant='contained'>
                                             حذف
                                         </Button>
@@ -236,7 +236,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                                                     </Select>
                                                 </FormControl>
                                                 {/* <TextField fullWidth id='email' label='Email' variant='outlined' value={email} onChange={handleChangeEmail} style={{ marginTop: '20px' }} /> */}
-                                                <TextField fullWidth id='id' label='text' variant='outlined' value={userId} onChange={handleChangeRole} style={{ marginTop: '20px' }} />
+                                                <TextField fullWidth id='id' label='text' placeholder='ادخل ID الخاص للمستخدم' variant='outlined' value={userId} onChange={handleChangeRole} style={{ marginTop: '20px' }} />
                                                 <DialogActions style={{justifyContent: 'space-between'}}>
                                                     <Button onClick={handleSubmit} type='submit' color='success' variant='contained'>
                                                         تأكيد

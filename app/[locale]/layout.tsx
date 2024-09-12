@@ -65,7 +65,8 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${josefin.variable} !bg-white bg-no-repeat dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300`}>
         <Providers>
           <SessionProvider>
-            <ThemeProvider attribute='class' defaultTheme='dark' enableSystem >
+            {/* enableSystem */}
+            <ThemeProvider attribute='class' defaultTheme='dark'  >
              <Custom>
                 {children}
               </Custom>
