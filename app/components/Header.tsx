@@ -172,7 +172,7 @@ const Header:FC<Props> = ({activeItem,setOpen,route,open,setRoute})=>{
                                 <br />
                                 <p className='text-[16px] px-2 pr-5 text-black dark:text-white'>
                                 &copy; {t("2024 ليركو. جميع الحقوق محفوظة. صنع بواسطة")}
-                                <a className="border-b border-[crimson] dark:border-[#23bd70] border-solid dark:text-[#23bd70] text-[crimson]" href="https://my-portfolio0tr.vercel.app">
+                                <a className="border-b border-[crimson] dark:border-[#23bd70] border-solid dark:text-[#23bd70] text-[crimson]" href="https://dev-mahmoud.vercel.app">
                                     {t("محمود محمد")}
                                     </a>
                                 </p>

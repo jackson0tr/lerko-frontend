@@ -197,10 +197,10 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                             <CoursePlayer videoUrl={data?.demoUrl} title={data?.title} />
                             <div className="flex items-center">
                                 <h1 className="pt-5 text-[25px] text-[#333] dark:text-[#fff] ">
-                                    {data?.price === 0 ? 'مجانا' : data?.price + '$'}
+                                    {data?.price === 0 ? 'مجانا' : data?.price + ' ' + 'EGP'}
                                 </h1>
                                 <h5 className='pr-3 text-[20px] mt-2 line-through opacity-80 text-[#333] dark:text-[#fff] '>
-                                    {data?.estimatedPrice}$
+                                    {data?.estimatedPrice}{' '} EGP
                                 </h5>
                                 <h4 className='pr-5 pt-4 text-[22px] text-[#333] dark:text-[#fff] '>
                                     {discoutPercentegePrice}% خصم
@@ -214,7 +214,7 @@ const CourseDetails: FC<Props> = ({ data, clientSecret, stripePromise, setRoute,
                                         </Link>
                                     ) : (
                                         <div className={`${style.button} !w-[180px] my-3 font-Poppins cursor-pointer !bg-[crimson]`} onClick={handleOrder}>
-                                            اشتري الآن {data?.price}$
+                                            اشتري الآن {data?.price}{' '} EGP
                                         </div>
                                     )
                                 }
