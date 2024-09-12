@@ -65,7 +65,7 @@ const EditHome: FC<Props> = () => {
 
     return (
         <>
-            {/* <div className="container pr-[100px] relative 1000px:flex items-center">
+            <div className="container pr-[100px] relative 1000px:flex items-center">
                 <div className="absolute top-0 1500px:h-[700px] 1500px:w-[700px] 1100px:h-[500px] 1100px:w-[500px] pr-[80px]">
                     <div className="w-full flex min-h-screen items-center justify-end pt-[20px] z-10 ">
                         <div className="relative flex justify-end items-center">
@@ -96,70 +96,7 @@ const EditHome: FC<Props> = () => {
                     <br />
                     <br />
                 </div>
-            </div> */}
-            <div className="container pr-[20px] lg:pr-[100px] relative flex items-center">
-                <div className="absolute top-0 lg:h-[500px] lg:w-[500px] xl:h-[700px] xl:w-[700px] pr-[20px] lg:pr-[80px]">
-                    <div className="w-full flex min-h-screen items-center justify-end pt-[20px] z-10">
-                        <div className="relative flex justify-end items-center">
-                            <Image
-                                width={100}
-                                height={100}
-                                src={image}
-                                alt="img"
-                                className="object-contain w-full h-full z-10"
-                            />
-                            <input
-                                type="file"
-                                id="banner"
-                                accept="image/*"
-                                onChange={handleUpdate}
-                                className="hidden"
-                            />
-                            <label htmlFor="banner" className="absolute bottom-0 right-0 z-20">
-                                <AiOutlineCamera className="dark:text-[#fff] text-[#333] text-[18px] cursor-pointer" />
-                            </label>
-                        </div>
-                        <div className="w-full flex flex-col items-center text-center sm:text-left pt-[40px]">
-                            <textarea
-                                rows={4}
-                                value={title}
-                                placeholder="أدخل العنوان"
-                                onChange={(e) => setTitle(e.target.value)}
-                                className="dark:text-[#fff] text-[#000000c7] resize-none text-[20px] sm:text-[30px] lg:text-[60px] xl:text-[70px] px-3 w-full font-Poppins"
-                            ></textarea>
-                            <br />
-                            <textarea
-                                value={subTitle}
-                                placeholder="أدخل العنوان الفرعي الخاص بك"
-                                onChange={(e) => setSubTitle(e.target.value)}
-                                className="dark:text-[#fff] text-[#000000c7] font-Josefin w-full font-[600] text-[14px] sm:text-[18px] bg-transparent"
-                            ></textarea>
-                            <br />
-                        </div>
-                    </div>
-                    <div
-                        className={`${style.button} !w-[80px] sm:!w-[100px] !rounded bottom-8 sm:bottom-12 right-8 sm:right-12 !min-h-[40px] !h-[40px] dark:text-[#fff] text-[#333] bg-[#cccccc34] ${data?.layout?.banner?.title !== title ||
-                                data?.layout?.banner?.subTitle !== subTitle ||
-                                data?.layout?.banner?.image?.url !== image
-                                ? '!cursor-pointer !bg-[#42383]'
-                                : '!cursor-not-allowed'
-                            }`}
-                        onClick={
-                            data?.layout?.banner?.title !== title ||
-                                data?.layout?.banner?.subTitle !== subTitle ||
-                                data?.layout?.banner?.image?.url !== image
-                                ? handleEdit
-                                : () => null
-                        }
-                    >
-                        حفظ
-                    </div>
-                    <br />
-                    <br />
-                    <br />
-                </div>
             </div>
-
         </>
     )
 }

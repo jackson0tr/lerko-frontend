@@ -25,7 +25,8 @@ const Page: FC<Props> = ({ params: {locale}}) => {
                                 title={`لوحة تحكم المشرف`}
                                 description="لوحة تحكم ليركو"
                                 keywords="لوحة الادارة" />
-                            <div className="flex h-[200vh]">
+                                {/* [200vh] */}
+                            <div className="flex h-screen">
                                 <div className="1500px:w-[16%] w-1/5">
                                     <AdminSidebar />
                                 </div>

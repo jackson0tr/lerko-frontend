@@ -65,7 +65,7 @@ const NavItems: React.FC<Props> = ({ activeItem, isMobile }) => {
             {
                 isMobile && (
                     <div className="800px:hidden mt-5" >
-                        <IoClose id='screen' size={50} onClick={handleClose} className='cursor-pointer  pl-[20px] text-[crimson] absolute top-[20px] left[0' />
+                        <IoClose id='screen' size={50} onClick={handleClose} className='cursor-pointer  pl-[20px] text-[crimson] absolute top-[20px] left-0' />
                         <div className="w-full text-center py-6">
                             <Link href='/' passHref>
                                 <Image src={logo} alt='logo' width={100} height={100} />

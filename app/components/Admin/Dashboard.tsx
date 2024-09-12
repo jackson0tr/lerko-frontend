@@ -10,15 +10,13 @@ type Props = {
 const Dashboard: FC<Props> = ({ isDashboard }) => {
     const [open, setOpen] = useState(false);
     return (
-        <div className="flex h-screen">
-            <div className="w-[85%]">
-                <DashboardHeader open={open} setOpen={setOpen} />
-                {
-                    isDashboard && (
-                        <DashboardWidgets open={open} />
-                    )
-                }
-            </div>
+        <div>
+            <DashboardHeader open={open} setOpen={setOpen} />
+            {
+                isDashboard && (
+                    <DashboardWidgets open={open} />
+                )
+            }
         </div>
     )
 }
