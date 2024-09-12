@@ -71,7 +71,7 @@ const DashboardWidgets: FC<Props> = ({ open }) => {
                         <UserAnalytics isDashboard={true} />
                     </div>
 
-                    <div className="pt-[80px] pl-8">
+                    <div className="pt-[80px] pr-8">
 
                         <div className="w-full dark:bg-[#111C43] rounded-sm shadow">
                             <div className="flex items-center p-5 justify-between">
