@@ -33,7 +33,7 @@ const CourseCard:FC<Props> = ({item,isProfile}) => {
                             {item.price === 0 ? 'Free' : item.price + 'EGP'}
                         </h3>
                         <h5 className="px-3 text-[14px] mt-[-5px] line-through opacity-80 text-[#333] dark:text-[#fff] ">
-                            {item.estimatedPrice} EGP
+                            {item.estimatedPrice}{' '}EGP
                         </h5>
                     </div>
                     <div className="flex items-center pb-3">
