@@ -31,7 +31,7 @@ const CreateCourse:FC<Props> = () => {
     useEffect(()=> {
         if(isSuccess){
             toast.success('تم إنشاء الدورة بنجاح');
-            redirect('/admin/courses');
+            redirect('/ar/admin/courses');
         }
         if(error){
             if('data' in error){

@@ -22,7 +22,7 @@ export const coursesApi = apiSlice.injectEndpoints({
             query: ({id,data})=> ({
                 url: `edit/${id}`,
                 method: "PUT",
-                body: {data},
+                body: data,
                 credentials: "include" as const
             })
         }),

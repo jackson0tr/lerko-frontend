@@ -37,10 +37,10 @@ const CoursePreview:FC<Props> = ({active,setActive,courseData,handleCreateCourse
                     <h1 className="pt-5 text-[25px]">
                         {courseData?.price === 0 ? 'مجانا' : courseData?.price + '$'}
                     </h1>
-                    <h5 className="pl-3 text-[20px] mt-2 line-through opacity-80">
+                    <h5 className="pr-3 text-[20px] mt-2 line-through opacity-80">
                         {courseData?.estimatedPrice}
                     </h5>
-                    <h4 className='pl-5 pt-4 text-[22px]'>
+                    <h4 className='pr-5 pt-4 text-[22px]'>
                         {discountedPercentengePrice}٪ تخفيض
                     </h4>
                 </div>
@@ -50,8 +50,8 @@ const CoursePreview:FC<Props> = ({active,setActive,courseData,handleCreateCourse
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <input type="text" name='' id='' placeholder='الرقم التسلسلي للخصم...' className={`${style.input} !w-[50%] ml-3 !mt-0`} />
-                    <div className={`${style.button} !w-[120px] my-3 ml-4 font-Poppins cursor-pointer `}>
+                    <input type="text" name='' id='' placeholder='الرقم التسلسلي للخصم...' className={`${style.input} !w-[50%] mr-3 !mt-0`} />
+                    <div className={`${style.button} !w-[120px] my-3 mr-4 font-Poppins cursor-pointer `}>
                     قدم
                     </div>
                 </div>
@@ -82,7 +82,7 @@ const CoursePreview:FC<Props> = ({active,setActive,courseData,handleCreateCourse
                             <div className="w-[15px] mr-1">
                                 <IoCheckmarkDoneOutline size={20}/>
                             </div>
-                            <p className='pl-2'>
+                            <p className='pr-2'>
                                 {item.title}
                             </p>
                         </div>
@@ -99,7 +99,7 @@ const CoursePreview:FC<Props> = ({active,setActive,courseData,handleCreateCourse
                             <div className="w-[15px] mr-1">
                                 <IoCheckmarkDoneOutline size={20}/>
                             </div>
-                            <p className='pl-2'>
+                            <p className='pr-2'>
                                 {item.title}
                             </p>
                         </div>
